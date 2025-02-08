@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stijl aanpassen</title>
+</head>
+<style>
+    body{
+    background-color:orange;
+    }
+    h1{
+    color: black;
+    background-color: red;
+    margin-left: 30px;
+    }
+    p{
+    margin-left: 20px;
+    }
+    h2{
+    margin-left: 25px;
+    }
+    article
+    {
+    width: 500px;
+    margin-bottom: 10px;
+    margin-left: 20% ;
+    border: 3px solid white;
+    margin-top: 10px;
+    background-color: pink;
+    }
+    header{
+    background-color: red;
+    height: 120px;
+    }
+    .article{
+        background-color: pink;
+    }
+</style>
+<body>
+<header><h1>Mijn website</h1></header>
+<body>
+{% block content %}{% for post in posts %}
+<article class="post">
+<h2><a href="">{{ post.title }}</a></h2><p>{{ post.text|linebreaksbr }}</p>
+<time class="date">{{ post.published_date }}</time>
+</article>{% endfor %}{% endblock %}
+
+</body>
+</html>
